@@ -1,0 +1,62 @@
+:root{--pine:#12261f;--moss:#2c4a42;--mist:#e8f1ee;--snow:#fbfdfc;--ember:#e8602c;--ink:#1d2b27}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Barlow,sans-serif;color:var(--ink);background:var(--snow);line-height:1.6}
+h1,h2,h3,.logo{font-family:'Barlow Condensed',sans-serif;font-weight:800;line-height:1.05}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ember);outline-offset:2px}
+.nav{position:fixed;inset:0 0 auto;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;background:rgba(18,38,31,.82);backdrop-filter:blur(8px);color:#fff}
+.logo{font-size:1.6rem;text-decoration:none}
+.nav nav a{margin-left:22px;text-decoration:none;font-weight:500}
+.nav nav a:hover{color:#f6b26b}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:linear-gradient(#1c3b4a,#e98b5a 78%,#f6c38b)}
+.ridges{position:absolute;inset:0;width:100%;height:100%}
+.r{transition:transform .1s linear}
+.hero-text{position:relative;padding:0 5vw;color:#fff;max-width:760px;margin-top:-6vh;animation:rise 1s ease both}
+.hero h1{font-size:clamp(3rem,9vw,6.5rem)}
+.hero p{margin:18px 0 28px;font-size:1.2rem;max-width:520px}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}}
+.btn{display:inline-block;background:var(--ember);color:#fff;border:0;padding:14px 28px;font:600 1.1rem 'Barlow Condensed';letter-spacing:.04em;border-radius:4px;cursor:pointer;text-decoration:none}
+.btn:hover{background:#c94d1e}
+.sec{padding:80px 5vw;max-width:1200px;margin:auto}
+.sec h2{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:28px;color:var(--pine)}
+.dark{max-width:none;background:var(--pine);color:var(--mist)}
+.dark h2{color:#fff}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px;max-width:1200px;margin:auto}
+.why h3{font-size:1.6rem;color:#f6b26b;margin-bottom:6px}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.filters button{background:var(--mist);border:0;padding:8px 18px;border-radius:99px;font:500 1rem Barlow;cursor:pointer}
+.filters button.on{background:var(--pine);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:26px}
+.card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 14px rgba(18,38,31,.12);display:flex;flex-direction:column;transition:transform .2s}
+.card:hover{transform:translateY(-4px)}
+.thumb{height:190px;background:linear-gradient(135deg,var(--moss),#6f9a8d) center/cover;display:grid;place-items:center;font-size:4rem}
+.body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.body h3{font-size:1.5rem}
+.body p{font-size:.95rem;flex:1}
+.price{font:800 1.5rem 'Barlow Condensed';color:var(--ember)}
+.row{display:flex;gap:8px}
+.row .btn{flex:1;text-align:center;padding:10px}
+.del{background:none;border:1px solid #c9d4d0;border-radius:4px;padding:0 12px;cursor:pointer}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.form label{display:flex;flex-direction:column;gap:6px;font-weight:500}
+.form .wide{grid-column:1/-1}
+input,select,textarea{padding:10px;border:1px solid #b9c7c2;border-radius:4px;font:inherit}
+.note{margin-top:14px;font-size:.9rem;color:#5b6b66}
+footer{text-align:center;padding:30px;background:var(--pine);color:var(--mist)}
+.navbtn{margin-left:22px;background:none;border:1px solid #f6b26b;color:#f6b26b;padding:6px 14px;border-radius:4px;font:500 .95rem Barlow;cursor:pointer}
+.navbtn:hover{background:#f6b26b;color:var(--pine)}
+.admin-only[hidden]{display:none}
+dialog{border:0;border-radius:10px;padding:28px;width:min(92vw,380px);box-shadow:0 10px 40px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(18,38,31,.7)}
+.login{grid-template-columns:1fr}
+.login h2{font-size:2rem;margin:0}
+.err{color:#b3261e;min-height:1.4em;font-size:.95rem}
+.del{padding:10px 16px}
+.login[hidden]{display:none}
+.who{margin-left:22px;color:#f6b26b;font-weight:500}
+.switch{font-size:.95rem}
+.link{background:none;border:0;color:var(--ember);font:inherit;font-weight:600;text-decoration:underline;cursor:pointer;padding:0}
+@media(max-width:600px){.who{display:none}}
+@media(max-width:600px){.nav nav a{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}

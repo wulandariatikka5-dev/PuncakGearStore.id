@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puncak Gear — Perlengkapan Mendaki</title>
+<meta name="description" content="Tenda, carrier, dan perlengkapan mendaki untuk pendakian berikutnya.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="#top">Puncak Gear</a>
+  <nav><a href="#produk">Produk</a><a href="#kenapa">Kenapa Kami</a><a href="#tambah" class="admin-only" hidden>Tambah Produk</a><span id="who" class="who"></span><button id="loginBtn" class="navbtn" type="button">Masuk / Daftar</button></nav>
+</header>
+
+<section class="hero" id="top">
+  <svg class="ridges" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <circle cx="1100" cy="170" r="70" fill="#f6b26b" opacity=".9"/>
+    <path class="r r1" d="M0 360 L180 230 L300 310 L470 170 L640 330 L800 220 L980 340 L1160 200 L1300 290 L1440 230 V600 H0Z" fill="#4a6b63"/>
+    <path class="r r2" d="M0 440 L140 330 L260 400 L430 280 L600 420 L760 320 L940 430 L1120 310 L1300 410 L1440 350 V600 H0Z" fill="#2c4a42"/>
+    <path class="r r3" d="M0 520 L200 420 L340 490 L520 400 L700 500 L880 410 L1060 500 L1240 420 L1440 490 V600 H0Z" fill="#12261f"/>
+  </svg>
+  <div class="hero-text">
+    <h1>Naik lebih tinggi.<br>Bawa yang tepat.</h1>
+    <p>Tenda, carrier, dan perlengkapan masak yang sudah teruji di jalur berbatu, hujan, dan dingin di atas 2.000 mdpl.</p>
+    <a class="btn" href="#produk">Lihat perlengkapan</a>
+  </div>
+</section>
+
+<section class="sec" id="produk">
+  <h2>Perlengkapan pendakian</h2>
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="sec dark" id="kenapa">
+  <h2>Kenapa pendaki memilih kami</h2>
+  <div class="why">
+    <div><h3>Diuji di jalur</h3><p>Setiap produk dicoba langsung sebelum dijual.</p></div>
+    <div><h3>Harga jelas</h3><p>Tidak ada biaya tersembunyi. Harga di kartu adalah harga akhir.</p></div>
+    <div><h3>Dikirim cepat</h3><p>Pesanan diproses di hari yang sama, ke seluruh Indonesia.</p></div>
+  </div>
+</section>
+
+<section class="sec admin-only" id="tambah" hidden>
+  <h2>Tambah produk</h2>
+  <form id="form" class="form">
+    <label>Nama produk<input name="name" required maxlength="60"></label>
+    <label>Harga (Rp)<input name="price" type="number" min="0" required></label>
+    <label>Kategori<select name="cat"></select></label>
+    <label>Gambar (unggah)<input name="file" type="file" accept="image/*"></label>
+    <label>atau URL gambar<input name="url" type="url" placeholder="https://..."></label>
+    <label class="wide">Deskripsi<textarea name="desc" rows="3" required maxlength="200"></textarea></label>
+    <button class="btn" type="submit">Simpan produk</button>
+  </form>
+  <p class="note">Produk tersimpan di browser ini (localStorage). Untuk produk permanen, ubah daftar di <code>script.js</code>.</p>
+</section>
+
+<dialog id="loginDlg">
+  <form id="loginForm" class="form login">
+    <h2>Masuk</h2>
+    <label>Username<input name="user" autocomplete="username" required></label>
+    <label>Password<input name="pass" type="password" autocomplete="current-password" required></label>
+    <p class="err" id="loginErr" role="alert"></p>
+    <div class="row"><button class="btn" type="submit">Masuk</button><button class="del" type="button" data-close>Batal</button></div>
+    <p class="switch">Belum punya akun? <button type="button" class="link" data-show="regForm">Daftar</button></p>
+  </form>
+  <form id="regForm" class="form login" hidden>
+    <h2>Daftar akun</h2>
+    <label>Nama lengkap<input name="name" autocomplete="name" required maxlength="40"></label>
+    <label>Username<input name="user" autocomplete="username" required pattern="[A-Za-z0-9_]{3,20}" title="3-20 karakter: huruf, angka, atau garis bawah"></label>
+    <label>Password<input name="pass" type="password" autocomplete="new-password" required minlength="8" title="Minimal 8 karakter"></label>
+    <label>Ulangi password<input name="pass2" type="password" autocomplete="new-password" required minlength="8"></label>
+    <p class="err" id="regErr" role="alert"></p>
+    <div class="row"><button class="btn" type="submit">Daftar</button><button class="del" type="button" data-close>Batal</button></div>
+    <p class="switch">Sudah punya akun? <button type="button" class="link" data-show="loginForm">Masuk</button></p>
+  </form>
+</dialog>
+
+<footer>© 2026 Puncak Gear. Sampai jumpa di puncak.</footer>
+<script src="script.js"></script>
+</body>
+</html>
